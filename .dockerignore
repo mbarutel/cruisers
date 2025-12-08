@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.nuxt
+.output
+dist
+
+# Development files
+.git
+.gitignore
+.claude
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode
+.idea
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+README.md
+figma-code

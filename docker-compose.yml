@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cruisers-beach-resort:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DOCKER_BUILDKIT=0
+    restart: unless-stopped
