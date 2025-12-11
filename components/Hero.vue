@@ -43,7 +43,7 @@
       <div class="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div class="max-w-3xl text-white">
           <div class="text-white mb-6">
-            🌴 Your Tropical Paradise in San Agustin
+            🌴 Your Tropical Paradise in San Agustin, Test
           </div>
           <h1 class="text-5xl md:text-7xl mb-6 drop-shadow-2xl">
             CRUISER'S BEACH RESORT
