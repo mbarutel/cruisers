@@ -10,13 +10,13 @@
             Book your dream vacation today and experience the natural wonders of the Philippines. Limited rooms available for peak season.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <button class="bg-white text-emerald-600 px-8 py-4 rounded-lg hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2">
+            <a :href="links.booking" target="_blank" rel="noopener noreferrer" class="bg-white text-emerald-600 px-8 py-4 rounded-lg hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2">
               Book Your Stay
               <ArrowRight class="w-5 h-5" />
-            </button>
-            <button class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors">
+            </a>
+            <a :href="`${links.booking}#availability_target`" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors">
               View Packages
-            </button>
+            </a>
           </div>
           <div class="mt-8 text-emerald-50">
             <p>✓ Best price guarantee</p>
@@ -39,4 +39,6 @@
 
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next'
+
+const { links } = useAppConfig()
 </script>

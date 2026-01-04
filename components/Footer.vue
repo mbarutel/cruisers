@@ -11,16 +11,16 @@
             Your gateway to tropical paradise in San Agustin, Philippines.
           </p>
           <div class="flex gap-4">
-            <a href="#" class="hover:text-emerald-400 transition-colors">
+            <a :href="links.social.facebook" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">
               <Facebook class="w-5 h-5" />
             </a>
-            <a href="#" class="hover:text-emerald-400 transition-colors">
+            <a :href="links.social.instagram" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">
               <Instagram class="w-5 h-5" />
             </a>
-            <a href="#" class="hover:text-emerald-400 transition-colors">
+            <a :href="`tel:${links.phone}`" class="hover:text-emerald-400 transition-colors">
               <Phone class="w-5 h-5" />
             </a>
-            <a href="#" class="hover:text-emerald-400 transition-colors">
+            <a :href="`mailto:${links.email}`" class="hover:text-emerald-400 transition-colors">
               <Mail class="w-5 h-5" />
             </a>
           </div>
@@ -49,8 +49,8 @@
         <div>
           <h3 class="text-white mb-4">Contact</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:text-emerald-400 transition-colors">Reservations</a></li>
-            <li><a href="#" class="hover:text-emerald-400 transition-colors">Directions</a></li>
+            <li><a :href="links.booking" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Reservations</a></li>
+            <li><a :href="links.googleMaps" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Directions</a></li>
             <li><a href="#" class="hover:text-emerald-400 transition-colors">FAQs</a></li>
             <li><a href="#" class="hover:text-emerald-400 transition-colors">About Us</a></li>
           </ul>
@@ -61,9 +61,9 @@
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; 2025 Cruiser's Beach Resort. All rights reserved.</p>
           <div class="flex gap-6">
-            <a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
-            <a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
-            <a href="#" class="hover:text-emerald-400 transition-colors">Booking Policy</a>
+            <a :href="links.legal.privacy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+            <a :href="links.legal.terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
+            <a :href="links.legal.bookingPolicy" class="hover:text-emerald-400 transition-colors">Booking Policy</a>
           </div>
         </div>
       </div>
@@ -73,4 +73,6 @@
 
 <script setup lang="ts">
 import { Facebook, Instagram, Mail, Phone } from 'lucide-vue-next'
+
+const { links } = useAppConfig()
 </script>

@@ -37,7 +37,7 @@
               </div>
               <div>
                 <h3 class="text-2xl mb-2">Address</h3>
-                <p class="text-gray-700">4 Salvacion Road</p>
+                <p class="text-gray-700">Purok 4, Barangay Salvacion</p>
                 <p class="text-gray-700">8305 San Agustin</p>
                 <p class="text-gray-700">Philippines</p>
               </div>
@@ -51,8 +51,8 @@
               </div>
               <div>
                 <h3 class="text-2xl mb-2">Contact</h3>
-                <p class="text-gray-700">+63 XXX XXX XXXX</p>
-                <p class="text-gray-700">reservations@cruisersbeach.ph</p>
+                <p class="text-gray-700">{{ links.phone }}</p>
+                <p class="text-gray-700">{{ links.email }}</p>
               </div>
             </div>
           </div>
@@ -70,10 +70,14 @@
             </div>
           </div>
 
-          <button class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all flex items-center justify-center gap-2 shadow-lg">
+          <a
+            :href="links.googleMaps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all flex items-center justify-center gap-2 shadow-lg">
             <MapPin class="w-5 h-5" />
             Get Directions
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -82,4 +86,6 @@
 
 <script setup lang="ts">
 import { MapPin, Phone, Clock } from 'lucide-vue-next'
+
+const { links } = useAppConfig()
 </script>

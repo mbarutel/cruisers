@@ -16,9 +16,9 @@
         </div>
 
         <div class="flex items-center gap-4">
-          <button class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg">
+          <a :href="links.booking" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg">
             Book Now
-          </button>
+          </a>
           <button class="md:hidden text-white">
             <Menu class="w-6 h-6" />
           </button>
@@ -56,11 +56,14 @@
             <span>4 Salvacion Road, 8305 San Agustin, Philippines</span>
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
-            <button class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all flex items-center justify-center gap-2 shadow-xl">
+            <a :href="links.booking" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all flex items-center justify-center gap-2 shadow-xl">
               Reserve Your Stay
               <ArrowRight class="w-5 h-5" />
-            </button>
-            <button class="border-2 border-white bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg hover:bg-white/20 transition-all shadow-xl">
+            </a>
+            <button
+              @click="scrollToLocation"
+              class="border-2 border-white bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg hover:bg-white/20 transition-all shadow-xl"
+            >
               Contact Us
             </button>
           </div>
@@ -89,4 +92,13 @@
 
 <script setup lang="ts">
 import { ArrowRight, Menu, MapPin } from 'lucide-vue-next'
+
+const { links } = useAppConfig()
+
+const scrollToLocation = () => {
+  const locationSection = document.getElementById('location')
+  if (locationSection) {
+    locationSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
