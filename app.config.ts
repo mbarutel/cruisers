@@ -1,3 +1,23 @@
+declare module 'nuxt/schema' {
+  interface AppConfigInput {
+    links?: {
+      booking?: string
+      googleMaps?: string
+      phone?: string
+      email?: string
+      social?: {
+        facebook?: string
+        instagram?: string
+      }
+      legal?: {
+        privacy?: string
+        terms?: string
+        bookingPolicy?: string
+      }
+    }
+  }
+}
+
 export default defineAppConfig({
   links: {
     // External booking/reservation system
