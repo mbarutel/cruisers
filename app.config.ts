@@ -16,6 +16,25 @@ declare module 'nuxt/schema' {
       }
     }
   }
+
+  // Add this for runtime types
+  interface AppConfig {
+    links: {
+      booking: string
+      googleMaps: string
+      phone: string
+      email: string
+      social: {
+        facebook: string
+        instagram: string
+      }
+      legal: {
+        privacy: string
+        terms: string
+        bookingPolicy: string
+      }
+    }
+  }
 }
 
 export default defineAppConfig({
