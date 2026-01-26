@@ -3,7 +3,6 @@
     <Hero />
     <About />
     <Features />
-    <Testimonials />
     <Location />
     <CTA />
     <Footer />

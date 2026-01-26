@@ -4,19 +4,39 @@
     <nav class="absolute top-0 left-0 right-0 z-20 container mx-auto px-6 py-6">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg"></div>
-          <span class="text-xl text-white drop-shadow-lg">Cruiser's Beach Resort</span>
+          <div
+            class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg"
+          ></div>
+          <span class="text-xl text-white drop-shadow-lg"
+            >Cruiser's Beach Resort</span
+          >
         </div>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="#features" class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg">Amenities</a>
-          <a href="#testimonials" class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg">Reviews</a>
-          <a href="#location" class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg">Location</a>
-          <a href="#contact" class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg">Contact</a>
+          <a
+            href="#features"
+            class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg"
+            >Amenities</a
+          >
+          <a
+            href="#location"
+            class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg"
+            >Location</a
+          >
+          <a
+            href="#location"
+            class="text-white hover:text-emerald-200 transition-colors drop-shadow-lg"
+            >Contact</a
+          >
         </div>
 
         <div class="flex items-center gap-4">
-          <a :href="links.booking" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg">
+          <a
+            :href="links.booking"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg"
+          >
             Book Now
           </a>
           <button class="md:hidden text-white">
@@ -36,11 +56,15 @@
           class="w-full h-full object-cover"
         />
         <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"
+        ></div>
       </div>
 
       <!-- Hero Content -->
-      <div class="relative z-10 container mx-auto px-6 h-full flex items-center">
+      <div
+        class="relative z-10 container mx-auto px-6 h-full flex items-center"
+      >
         <div class="max-w-3xl text-white">
           <div class="text-white mb-6">
             🌴 Your Tropical Paradise in San Agustin, Test
@@ -56,7 +80,12 @@
             <span>4 Salvacion Road, 8305 San Agustin, Philippines</span>
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a :href="links.booking" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all flex items-center justify-center gap-2 shadow-xl">
+            <a
+              :href="links.booking"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all flex items-center justify-center gap-2 shadow-xl"
+            >
               Reserve Your Stay
               <ArrowRight class="w-5 h-5" />
             </a>
@@ -81,8 +110,12 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-        <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
+      >
+        <div
+          class="w-6 h-10 border-2 border-white rounded-full flex justify-center"
+        >
           <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
         </div>
       </div>
@@ -91,14 +124,14 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRight, Menu, MapPin } from 'lucide-vue-next'
+import { ArrowRight, Menu, MapPin } from "lucide-vue-next";
 
-const { links } = useAppConfig()
+const { links } = useAppConfig();
 
 const scrollToLocation = () => {
-  const locationSection = document.getElementById('location')
+  const locationSection = document.getElementById("location");
   if (locationSection) {
-    locationSection.scrollIntoView({ behavior: 'smooth' })
+    locationSection.scrollIntoView({ behavior: "smooth" });
   }
-}
+};
 </script>
