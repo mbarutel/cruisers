@@ -79,7 +79,7 @@
 ## Current Challenge & Solution
 
 ### **Issue Encountered:**
-Docker build process freezes on the $6/month droplet (1GB RAM) during the `pnpm run build` step. The Nuxt/Vite build is too memory-intensive for the droplet.
+Docker build process freezes on the $6/month droplet (1GB RAM) during the `npm run build` step. The Nuxt/Vite build is too memory-intensive for the droplet.
 
 ### **Chosen Solution: Option 4 - Build in GitHub Actions**
 Build the Docker image in GitHub Actions (which has 7GB RAM), push to Docker Hub, then have the droplet pull the pre-built image.
