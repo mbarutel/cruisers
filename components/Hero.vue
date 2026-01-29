@@ -8,7 +8,7 @@
             class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg"
           ></div>
           <span class="text-xl text-white drop-shadow-lg"
-            >Cruiser's Beach Resort</span
+            >Cruisers</span
           >
         </div>
 
@@ -67,10 +67,10 @@
       >
         <div class="max-w-3xl text-white">
           <div class="text-white mb-6">
-            🌴 Your Tropical Paradise in San Agustin, Test
+            🌴 Your Tropical Paradise in San Agustin
           </div>
           <h1 class="text-5xl md:text-7xl mb-6 drop-shadow-2xl">
-            CRUISER'S BEACH RESORT
+            INTERNATIONAL CRUISERS SEAFRONT BEACH RESORT & FARM
           </h1>
           <p class="text-2xl md:text-3xl mb-4 drop-shadow-lg text-emerald-50">
             Experience the Natural Beauty of the Philippines

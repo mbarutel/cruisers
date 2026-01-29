@@ -17,7 +17,7 @@
         <!-- Map Image -->
         <div class="relative">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1680170868966-e46b865b05f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaGlsaXBwaW5lcyUyMG1hcCUyMGxvY2F0aW9ufGVufDF8fHx8MTc2NTA4Njg1NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://images.unsplash.com/photo-1698099843370-990862ece606?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Map of Philippines showing San Agustin location"
             class="w-full h-full object-cover rounded-2xl shadow-lg"
           />
