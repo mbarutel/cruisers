@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: cruisers-beach-resort:latest
+    image: cruisers:latest
     ports:
       - "3000:3000"
     environment:
