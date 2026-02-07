@@ -55,10 +55,20 @@ jobs:
             echo "📥 Pulling latest image..."
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cruisers:latest
             
-            # Stop and remove existing container
+            # Stop and remove existing container (force if needed)
             echo "🛑 Stopping existing container..."
-            docker stop cruisers || true
-            docker rm cruisers || true
+            if docker ps -a --filter name=cruisers --format '{{.Names}}' | grep -q cruisers; then
+              docker stop cruisers -t 10 || docker kill cruisers || true
+              docker rm -f cruisers || true
+            fi
+            
+            # Verify port 3000 is free (kill any lingering processes if needed)
+            echo "🔍 Checking port 3000..."
+            if lsof -ti:3000 > /dev/null 2>&1; then
+              echo "⚠️  Port 3000 still in use, killing processes..."
+              lsof -ti:3000 | xargs kill -9 || true
+              sleep 2
+            fi
             
             # Run new container with environment variables
             echo "🔨 Starting new container..."
@@ -70,6 +80,17 @@ jobs:
               -e NUXT_RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} \
               -e NUXT_RESORT_EMAIL=${{ secrets.RESORT_EMAIL }} \
               ${{ secrets.DOCKERHUB_USERNAME }}/cruisers:latest
+            
+            # Wait for container to start
+            sleep 3
+            
+            # Verify container is running
+            if ! docker ps --filter name=cruisers --format '{{.Names}}' | grep -q cruisers; then
+              echo "❌ Container failed to start!"
+              echo "Last logs:"
+              docker logs cruisers || true
+              exit 1
+            fi
             
             # Clean up old images to save space
             echo "🧹 Cleaning up old images..."
