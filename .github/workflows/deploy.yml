@@ -48,17 +48,39 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: IMAGE_NAME
           script: |
-            docker pull ${{ env.IMAGE_NAME }}:latest
+            echo "🚀 Starting deployment..."
+            
+            # Pull latest image from Docker Hub
+            echo "📥 Pulling latest image..."
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cruisers:latest
+            
+            # Stop and remove existing container
+            echo "🛑 Stopping existing container..."
             docker stop cruisers || true
             docker rm cruisers || true
+            
+            # Run new container with environment variables
+            echo "🔨 Starting new container..."
             docker run -d \
               --name cruisers \
               --restart unless-stopped \
               -p 3000:3000 \
               -e NODE_ENV=production \
-              ${{ env.IMAGE_NAME }}:latest
-            docker ps
-            echo "Recent logs:"
+              -e NUXT_RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} \
+              -e NUXT_RESORT_EMAIL=${{ secrets.RESORT_EMAIL }} \
+              ${{ secrets.DOCKERHUB_USERNAME }}/cruisers:latest
+            
+            # Clean up old images to save space
+            echo "🧹 Cleaning up old images..."
+            docker image prune -af --filter "until=24h" || true
+            
+            # Show status
+            echo "✅ Deployment complete!"
+            echo ""
+            echo "📊 Container status:"
+            docker ps --filter name=cruisers
+            
+            echo ""
+            echo "📝 Recent logs:"
             docker logs --tail=20 cruisers

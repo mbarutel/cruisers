@@ -48,24 +48,24 @@
           <h3 class="text-white mb-4">Accommodations</h3>
           <ul class="space-y-2">
             <li>
-              <a
-                :href="links.booking"
+              <button
+                @click="scrollToBooking"
                 class="hover:text-emerald-400 transition-colors"
-                >Bungalow - Beachfront</a
+                >Bungalow - Beach Front</button
               >
             </li>
             <li>
-              <a
-                :href="links.booking"
+              <button
+                @click="scrollToBooking"
                 class="hover:text-emerald-400 transition-colors"
-                >Family Bungalow</a
+                >Family Bungalow</button
               >
             </li>
             <li>
-              <a
-                :href="links.booking"
+              <button
+                @click="scrollToBooking"
                 class="hover:text-emerald-400 transition-colors"
-                >Deluxe Room</a
+                >Delux Double Room with Sea View</button
               >
             </li>
           </ul>
@@ -105,12 +105,10 @@
           <h3 class="text-white mb-4">Contact</h3>
           <ul class="space-y-2">
             <li>
-              <a
-                :href="links.booking"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                @click="scrollToBooking"
                 class="hover:text-emerald-400 transition-colors"
-                >Reservations</a
+                >Reservations</button
               >
             </li>
             <li>
@@ -124,9 +122,9 @@
             </li>
             <li>
               <a
-                :href="`${links.booking}#pp-faq`"
+                href="#location"
                 class="hover:text-emerald-400 transition-colors"
-                >FAQs</a
+                >Contact Info</a
               >
             </li>
           </ul>
@@ -165,4 +163,11 @@
 import { Facebook, Instagram, Mail, Phone } from "lucide-vue-next";
 
 const { links } = useAppConfig();
+
+const scrollToBooking = () => {
+  const bookingSection = document.getElementById("booking");
+  if (bookingSection) {
+    bookingSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
 </script>
