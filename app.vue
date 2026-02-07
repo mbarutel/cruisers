@@ -3,6 +3,7 @@
     <Hero />
     <About />
     <Features />
+    <BookingForm />
     <Location />
     <CTA />
     <Footer />

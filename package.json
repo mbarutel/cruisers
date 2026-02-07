@@ -12,6 +12,8 @@
   "dependencies": {
     "lucide-vue-next": "^0.556.0",
     "nuxt": "^4.2.1",
+    "resend": "^6.9.1",
+    "v-calendar": "^3.1.2",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },
